@@ -9,9 +9,9 @@ for file in files:
     extension_dir = os.getcwd() + os.sep + file
 
     for subfile in os.listdir(file):
-        old_filepath = extension_dir + os.sep + subfile
-        new_filepath = os.getcwd() + os.sep + subfile
-        os.rename(old_filepath, new_filepath)
+        from_path = extension_dir + os.sep + subfile
+        to_path = os.getcwd() + os.sep + subfile
+        os.rename(from_path, to_path)
 
     os.rmdir(extension_dir)
 

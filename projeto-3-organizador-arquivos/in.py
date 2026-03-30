@@ -2,9 +2,7 @@ import os
 
 ignore_extensions = ['py']
 
-files = os.listdir()
-
-for file in files:
+for file in os.listdir():
     if os.path.isdir(file):
         continue
 
@@ -16,8 +14,8 @@ for file in files:
     if not os.path.exists(extension):
         os.mkdir(extension)
 
-    old_filepath = os.getcwd() + os.sep + file
-    new_filepath = os.getcwd() + os.sep + extension + os.sep + file
-    os.rename(old_filepath, new_filepath)
+    from_path = os.path.join(os.getcwd(), file)
+    to_path = os.path.join(os.getcwd(), extension, file)
+    os.rename(from_path, to_path)
 
 
